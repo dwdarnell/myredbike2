@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&display=swap');
 /*
  * Copyright 2020 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
@@ -322,4 +323,204 @@ main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
+}/* ==========================================================================
+   MyRedBike brand layer
+   Append this whole block to the BOTTOM of styles/styles.css.
+   The font @import line goes on LINE 1 of styles.css (see top of the reply).
+   Selectors are prefixed with `main` / `body` so they beat the block CSS
+   (hero.css, cards.css, header.css, footer.css), which loads after styles.css.
+   ========================================================================== */
+
+:root {
+  --mrb-page: #f4f4f4;
+  --mrb-panel: #fff;
+  --mrb-header: #838383;
+  --mrb-text: #666;
+  --mrb-ink: #444;
+  --mrb-muted: #999;
+  --mrb-accent: #b03a3a;
+  --mrb-rule: #ddd;
+  --mrb-width: 1140px;
+  --background-color: var(--mrb-page);
+  --text-color: var(--mrb-text);
+  --link-color: var(--mrb-ink);
+  --link-hover-color: var(--mrb-accent);
+  --body-font-family: 'Source Sans 3', 'Helvetica Neue', arial, sans-serif;
+  --heading-font-family: 'Source Sans 3', 'Helvetica Neue', arial, sans-serif;
+}
+
+/* ---------- base type ---------- */
+body {
+  background-color: var(--mrb-page);
+  color: var(--mrb-text);
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+main h1,
+main h2,
+main h3 {
+  color: var(--mrb-ink);
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+main h1 { font-size: 32px; }
+main h2 { font-size: 24px; }
+main h3 { font-size: 16px; }
+
+main p { text-align: center; }
+
+/* ---------- header / nav ---------- */
+body header .nav-wrapper {
+  background-color: var(--mrb-header);
+  color: rgb(255 255 255 / 85%);
+}
+
+body header nav {
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+body header nav a:any-link {
+  color: rgb(255 255 255 / 85%);
+}
+
+body header nav a:any-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+body header nav .nav-brand a:any-link {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+/* ---------- hero section: white panel, image on top, title below ---------- */
+main > .section.hero-container {
+  max-width: var(--mrb-width);
+  margin: 48px auto 32px;
+  padding: 48px 48px 56px;
+  background-color: var(--mrb-panel);
+}
+
+main .hero-container .hero-wrapper {
+  padding: 0;
+}
+
+main .hero {
+  position: static;
+  min-height: 0;
+  padding: 0;
+}
+
+main .hero picture {
+  position: static;
+  z-index: auto;
+}
+
+main .hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 560px;
+  object-fit: cover;
+}
+
+main .hero h1 {
+  max-width: none;
+  margin: 40px 0 8px;
+  color: var(--mrb-ink);
+}
+
+/* ---------- buttons: thin outlined, uppercase ---------- */
+main a.button:any-link,
+main button {
+  margin: 16px 0;
+  padding: 0.75em 2.25em;
+  border: 1px solid var(--mrb-ink);
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--mrb-ink);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+main a.button:hover,
+main a.button:focus,
+main button:hover,
+main button:focus {
+  border-color: var(--mrb-accent);
+  background-color: transparent;
+  color: var(--mrb-accent);
+}
+
+/* ---------- cards: two-column white tiles ---------- */
+main .cards-wrapper {
+  max-width: var(--mrb-width);
+  margin: 0 auto;
+}
+
+main .cards > ul {
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (width >= 900px) {
+  main .cards > ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+main .cards > ul > li {
+  border: 0;
+  background-color: var(--mrb-panel);
+}
+
+main .cards .cards-card-body {
+  margin: 0;
+  padding: 40px 36px 32px;
+}
+
+main .cards .cards-card-body h3 {
+  margin-top: 0;
+}
+
+main .cards .cards-card-body h3 a:any-link {
+  color: var(--mrb-ink);
+}
+
+main .cards .cards-card-body h3 a:hover {
+  color: var(--mrb-accent);
+  text-decoration: none;
+}
+
+/* ---------- closing CTA (last section on every page) ---------- */
+main > .section:last-child {
+  max-width: 760px;
+  margin: 64px auto 80px;
+}
+
+/* ---------- footer ---------- */
+body footer {
+  background-color: var(--mrb-page);
+  border-top: 1px solid var(--mrb-rule);
+  color: var(--mrb-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+body footer a:any-link {
+  color: var(--mrb-muted);
+  text-decoration: underline;
+}
+
+body footer a:hover {
+  color: var(--mrb-accent);
 }
