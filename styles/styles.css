@@ -334,7 +334,7 @@ main .section.highlight {
 :root {
   --mrb-page: #f4f4f4;
   --mrb-panel: #fff;
-  --mrb-header: #838383;
+  --mrb-header: ##901307;
   --mrb-text: #666;
   --mrb-ink: #444;
   --mrb-muted: #999;
